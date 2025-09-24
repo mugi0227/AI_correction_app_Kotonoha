@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    - 'build'
+    - '-t'
+    - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/auto-correction-repo/frontend:latest'
+    - '--build-arg'
+    - 'REACT_APP_API_BASE_URL=${_REACT_APP_API_BASE_URL}'
+    - './frontend'
+images:
+- '${_REGION}-docker.pkg.dev/${PROJECT_ID}/auto-correction-repo/frontend:latest'
+substitutions:
+  _REGION: 'us-central1'
+  _REACT_APP_API_BASE_URL: 'http://localhost:8000' # デフォルト値
