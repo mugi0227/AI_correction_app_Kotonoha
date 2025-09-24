@@ -43,6 +43,7 @@ backend/.env
 backend/.env.*
 frontend/.env
 frontend/.env.*
+service.yaml
 
 # アプリ実行時に生成されるデータ
 backend/uploaded_pdfs/
